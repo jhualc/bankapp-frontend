@@ -1,0 +1,43 @@
+<div class="transaction-container">
+  <h2>Movimientos</h2>
+
+  <div class="actions">
+    <button class="new-btn" (click)="openTransactionModal()">
+      Nuevo Movimiento
+    </button>
+  </div>
+
+  <table class="transaction-table">
+    <thead>
+      <tr>
+        <th>Número Cuenta</th>
+        <th>Tipo</th>
+        <th>Saldo Inicial</th>
+        <th>Estado</th>
+        <th>Movimiento</th>
+        <th>Acciones</th>
+        <!-- ✅ Nueva columna -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions">
+        <td>{{ transaction.accountNumber }}</td>
+        <td>{{ transaction.accountType }}</td>
+        <td>{{ transaction.availableBalance }}</td>
+        <td>{{ transaction.status ? "Activo" : "Inactivo" }}</td>
+        <td>
+          {{
+            transaction.transactionType === "WITHDRAWAL"
+              ? "Retiro de"
+              : "Depósito de"
+          }}
+          {{ transaction.amount }}
+        </td>
+        <td>
+          <button (click)="editTransaction(transaction)">Editar</button>
+          <button (click)="deleteTransaction(transaction)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

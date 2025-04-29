@@ -1,0 +1,10 @@
+.app-layout {
+  display: flex;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  min-height: calc(100vh - 60px); /* Ajuste por la altura del navbar */
+}

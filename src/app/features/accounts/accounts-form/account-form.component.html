@@ -1,0 +1,104 @@
+<div class="modal-backdrop">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>{{ account ? "Editar Cuenta" : "Nueva Cuenta" }}</h2>
+      <button class="close-button" (click)="cancel()">×</button>
+    </div>
+
+    <div class="modal-body">
+      <form [formGroup]="form" (ngSubmit)="save()" novalidate>
+        <!-- Número de Cuenta -->
+        <div class="form-group">
+          <label for="accountNumber">Número de Cuenta</label>
+          <input
+            id="accountNumber"
+            type="text"
+            formControlName="accountNumber"
+          />
+          <div
+            class="error"
+            *ngIf="
+              form.get('accountNumber')?.invalid &&
+              form.get('accountNumber')?.touched
+            "
+          >
+            Número de Cuenta obligatorio
+          </div>
+        </div>
+
+        <!-- Tipo de Cuenta -->
+        <div class="form-group">
+          <label for="accountType">Tipo de Cuenta</label>
+          <select id="accountType" formControlName="accountType">
+            <option value="" disabled>Seleccione...</option>
+            <option *ngFor="let type of accountTypes" [value]="type.value">
+              {{ type.label }}
+            </option>
+          </select>
+          <div
+            class="error"
+            *ngIf="
+              form.get('accountType')?.invalid &&
+              form.get('accountType')?.touched
+            "
+          >
+            Tipo de Cuenta obligatorio
+          </div>
+        </div>
+
+        <!-- Saldo Inicial -->
+        <div class="form-group">
+          <label for="initialBalance">Saldo Inicial</label>
+          <input
+            id="initialBalance"
+            type="number"
+            formControlName="initialBalance"
+            min="0"
+          />
+          <div
+            class="error"
+            *ngIf="
+              form.get('initialBalance')?.invalid &&
+              form.get('initialBalance')?.touched
+            "
+          >
+            Saldo inicial obligatorio
+          </div>
+        </div>
+
+        <!-- Estado -->
+        <div class="form-group">
+          <label for="status">Estado</label>
+          <select id="status" formControlName="status">
+            <option [value]="true">Activo</option>
+            <option [value]="false">Inactivo</option>
+          </select>
+        </div>
+
+        <!-- Cliente asociado -->
+        <div class="form-group">
+          <label for="customerId">Cliente</label>
+          <select id="customerId" formControlName="customerId">
+            <option value="" disabled>Seleccione un cliente...</option>
+            <option *ngFor="let customer of customers" [value]="customer.id">
+              {{ customer.name }}
+            </option>
+          </select>
+          <div
+            class="error"
+            *ngIf="
+              form.get('customerId')?.invalid && form.get('customerId')?.touched
+            "
+          >
+            Cliente obligatorio
+          </div>
+        </div>
+
+        <!-- Botones -->
+        <div class="form-group">
+          <button type="submit" [disabled]="form.invalid">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

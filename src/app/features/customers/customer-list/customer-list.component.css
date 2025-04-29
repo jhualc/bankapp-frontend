@@ -1,0 +1,116 @@
+/* Contenedor principal */
+.customer-container,
+.account-container {
+  padding: 2rem;
+  background-color: #fff;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Títulos */
+.customer-container h2,
+.account-container h2 {
+  margin-bottom: 1rem;
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+
+/* Acciones: Input búsqueda + botón */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Input de búsqueda */
+.search-box {
+  padding: 0.5rem;
+  width: 220px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05); /* ✅ Sombra suave */
+  transition: all 0.3s ease;
+}
+
+.search-box:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* Botón "Nuevo" */
+.new-btn {
+  background-color: #ffd600; /* Amarillo tipo Banco Pichincha */
+  border: none;
+  padding: 0.5rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  color: black; /* Color de letra negro, para contraste */
+  transition: background-color 0.3s ease;
+}
+
+.new-btn:hover {
+  background-color: #ffc700; /* Un amarillo un poco más fuerte al pasar el mouse */
+}
+
+/* Tablas */
+.customer-table,
+.account-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.customer-table th,
+.customer-table td,
+.account-table th,
+.account-table td {
+  border: 1px solid #eee;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+/* Cabeceras de tablas */
+.customer-table th,
+.account-table th {
+  background-color: #f9f9f9;
+}
+
+/* Hover filas */
+.customer-table tr:hover,
+.account-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Botones generales */
+button {
+  padding: 0.4rem 0.8rem;
+  margin-right: 0.3rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+/* Botón editar dentro de tablas */
+.customer-table button:first-child,
+.account-table button:first-child {
+  background-color: #2196f3;
+  color: white;
+}
+
+.customer-table button:first-child:hover,
+.account-table button:first-child:hover {
+  background-color: #1976d2;
+}
+
+/* Botón eliminar dentro de tablas */
+.customer-table button:last-child,
+.account-table button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.customer-table button:last-child:hover,
+.account-table button:last-child:hover {
+  background-color: #d32f2f;
+}

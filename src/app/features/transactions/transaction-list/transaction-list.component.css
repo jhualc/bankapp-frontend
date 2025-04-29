@@ -1,0 +1,91 @@
+/* Contenedor principal de transacciones */
+.transaction-container {
+  padding: 2rem;
+  background-color: #fff;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Título de transacciones */
+.transaction-container h2 {
+  margin-bottom: 1rem;
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+
+/* Acciones: Botón nuevo movimiento */
+.transaction-container .actions {
+  display: flex;
+  justify-content: flex-end; /* Solo botón, sin input de búsqueda */
+  margin-bottom: 1rem;
+}
+
+/* Botón "Nuevo Movimiento" */
+.transaction-container .new-btn {
+  background-color: #ffd600; /* Amarillo tipo Banco Pichincha */
+  border: none;
+  padding: 0.5rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  color: black;
+  transition: background-color 0.3s ease;
+}
+
+.transaction-container .new-btn:hover {
+  background-color: #ffc700;
+}
+
+/* Tabla de transacciones */
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Celdas y cabeceras */
+.transaction-table th,
+.transaction-table td {
+  border: 1px solid #eee;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+/* Cabecera de la tabla */
+.transaction-table th {
+  background-color: #f9f9f9;
+}
+
+/* Hover en filas */
+.transaction-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Botones dentro de la tabla (si agregas después) */
+.transaction-table button {
+  padding: 0.4rem 0.8rem;
+  margin-right: 0.3rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Botón editar (si después agregas edición de movimientos) */
+.transaction-table button:first-child {
+  background-color: #2196f3;
+  color: white;
+}
+
+.transaction-table button:first-child:hover {
+  background-color: #1976d2;
+}
+
+/* Botón eliminar (si después agregas eliminación de movimientos) */
+.transaction-table button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.transaction-table button:last-child:hover {
+  background-color: #d32f2f;
+}

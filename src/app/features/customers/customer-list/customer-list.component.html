@@ -1,0 +1,46 @@
+<div class="customer-container">
+  <h2>Clientes</h2>
+
+  <div class="actions">
+    <input
+      type="text"
+      placeholder="Buscar"
+      class="search-box"
+      [(ngModel)]="searchTerm"
+    />
+
+    <button class="new-btn" (click)="openCustomerModal()">Crear Cliente</button>
+  </div>
+
+  <table class="customer-table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Género</th>
+        <th>Edad</th>
+        <th>Identificación</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of filteredCustomers()">
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.gender }}</td>
+        <td>{{ customer.age }}</td>
+        <td>{{ customer.identification }}</td>
+        <td>{{ customer.address }}</td>
+        <td>{{ customer.phone }}</td>
+        <td>{{ customer.status ? "Activo" : "Inactivo" }}</td>
+        <td>
+          <!-- botones editar / eliminar irán aquí -->
+          <button (click)="openCustomerModal(customer)">Editar</button>
+
+          <button (click)="deleteCustomer(customer)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

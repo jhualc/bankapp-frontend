@@ -1,0 +1,129 @@
+<div class="modal-backdrop">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>{{ customer ? "Editar Cliente" : "Nuevo Cliente" }}</h2>
+      <button class="close-button" (click)="cancel()">×</button>
+    </div>
+
+    <div class="modal-body">
+      <form [formGroup]="form" (ngSubmit)="save()" novalidate>
+        <!-- Nombre -->
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input id="name" type="text" formControlName="name" />
+          <div
+            class="error"
+            *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+          >
+            Nombre es obligatorio
+          </div>
+        </div>
+
+        <!-- Género -->
+        <div class="form-group">
+          <label for="gender">Género</label>
+          <select id="gender" formControlName="gender">
+            <option value="" disabled>Seleccione...</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+          </select>
+          <div
+            class="error"
+            *ngIf="form.get('gender')?.invalid && form.get('gender')?.touched"
+          >
+            Género es obligatorio
+          </div>
+        </div>
+
+        <!-- Edad -->
+        <div class="form-group">
+          <label for="age">Edad</label>
+          <input id="age" type="number" formControlName="age" min="0" />
+          <div
+            class="error"
+            *ngIf="form.get('age')?.invalid && form.get('age')?.touched"
+          >
+            Edad es obligatoria
+          </div>
+        </div>
+
+        <!-- Identificación -->
+        <div class="form-group">
+          <label for="identification">Identificación</label>
+          <input
+            id="identification"
+            type="text"
+            formControlName="identification"
+          />
+          <div
+            class="error"
+            *ngIf="
+              form.get('identification')?.invalid &&
+              form.get('identification')?.touched
+            "
+          >
+            Identificación es obligatoria y debe ser numérica
+          </div>
+        </div>
+
+        <!-- Dirección -->
+        <div class="form-group">
+          <label for="address">Dirección</label>
+          <input id="address" type="text" formControlName="address" />
+          <div
+            class="error"
+            *ngIf="form.get('address')?.invalid && form.get('address')?.touched"
+          >
+            Dirección es obligatoria
+          </div>
+        </div>
+
+        <!-- Teléfono -->
+        <div class="form-group">
+          <label for="phone">Teléfono</label>
+          <input id="phone" type="text" formControlName="phone" />
+          <div
+            class="error"
+            *ngIf="form.get('phone')?.invalid && form.get('phone')?.touched"
+          >
+            Teléfono es obligatorio y debe ser numérico
+          </div>
+        </div>
+
+        <!-- Contraseña -->
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input id="password" type="password" formControlName="password" />
+          <div
+            class="error"
+            *ngIf="
+              form.get('password')?.invalid && form.get('password')?.touched
+            "
+          >
+            Contraseña es obligatoria
+          </div>
+        </div>
+
+        <!-- Estado -->
+        <div class="form-group">
+          <label for="status">Estado</label>
+          <select id="status" formControlName="status">
+            <option [value]="true">Activo</option>
+            <option [value]="false">Inactivo</option>
+          </select>
+          <div
+            class="error"
+            *ngIf="form.get('status')?.invalid && form.get('status')?.touched"
+          >
+            Estado es obligatorio
+          </div>
+        </div>
+
+        <!-- Botones -->
+        <div class="form-group">
+          <button type="submit" [disabled]="form.invalid">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

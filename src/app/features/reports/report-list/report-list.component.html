@@ -1,0 +1,45 @@
+<div class="report-container">
+  <h2>Reporte de Movimientos</h2>
+
+  <div class="filters">
+    <select [(ngModel)]="selectedCustomerId">
+      <option value="">Seleccione un cliente...</option>
+      <option *ngFor="let customer of customers" [value]="customer.id">
+        {{ customer.name }}
+      </option>
+    </select>
+    <input type="date" [(ngModel)]="startDate" />
+    <input type="date" [(ngModel)]="endDate" />
+    <button (click)="fetchReport()">Buscar</button>
+    <button (click)="downloadPdf()">Descargar PDF</button>
+  </div>
+
+  <table *ngIf="reportData.length > 0" class="report-table">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Cliente</th>
+        <th>Número Cuenta</th>
+        <th>Tipo</th>
+        <th>Saldo Inicial</th>
+        <th>Estado</th>
+        <th>Movimiento</th>
+        <th>Saldo Disponible</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of reportData">
+        <td>{{ item.date | date : "shortDate" }}</td>
+        <td>{{ item.customerName }}</td>
+        <td>{{ item.accountNumber }}</td>
+        <td>{{ item.accountType }}</td>
+        <td>{{ item.initialBalance }}</td>
+        <td>{{ item.status ? "Activo" : "Inactivo" }}</td>
+        <td>{{ item.movement }}</td>
+        <td>{{ item.availableBalance }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="loading">Cargando reporte...</p>
+</div>

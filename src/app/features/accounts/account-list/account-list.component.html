@@ -1,0 +1,39 @@
+<div class="account-container">
+  <h2>Cuentas</h2>
+
+  <div class="actions">
+    <input
+      type="text"
+      placeholder="Buscar cuenta"
+      class="search-box"
+      [(ngModel)]="searchTerm"
+    />
+    <button class="new-btn" (click)="openAccountModal()">Crear Cuenta</button>
+  </div>
+
+  <table class="account-table">
+    <thead>
+      <tr>
+        <th>Número de Cuenta</th>
+        <th>Tipo</th>
+        <th>Saldo Inicial</th>
+        <th>Estado</th>
+        <th>Nombre Cliente</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let account of filteredAccounts()">
+        <td>{{ account.accountNumber }}</td>
+        <td>{{ account.accountType }}</td>
+        <td>{{ account.initialBalance }}</td>
+        <td>{{ account.status ? "Activo" : "Inactivo" }}</td>
+        <td>{{ account.customerName }}</td>
+        <td>
+          <button (click)="openAccountModal(account)">Editar</button>
+          <button (click)="deleteAccount(account)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
