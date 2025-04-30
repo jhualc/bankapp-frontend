@@ -2,12 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
-    "types": ["jest", "node"],
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "module": "esnext",
-    "target": "es2020"
+    "types": ["jasmine"]
   },
-  "files": ["setup-jest.ts"],
+  "files": ["src/test.ts"],
   "include": ["src/**/*.spec.ts", "src/**/*.d.ts"]
 }
