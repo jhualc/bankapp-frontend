@@ -1,27 +1,56 @@
-# BankappFrontend
+# BankApp Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+Este es el proyecto **Frontend** de la aplicación **BankApp**, desarrollado con **Angular 17**.
 
-## Development server
+## 🚀 Tecnologías utilizadas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Angular 17](https://angular.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [HTML5](https://developer.mozilla.org/es/docs/Web/HTML)
+- [CSS3](https://developer.mozilla.org/es/docs/Web/CSS)
 
-## Code scaffolding
+## 📦 Requisitos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Antes de empezar, asegúrate de tener instalado:
 
-## Build
+- [Node.js](https://nodejs.org/) (versión 18 o superior recomendada)
+- [Angular CLI](https://angular.io/cli)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm install -g @angular/cli
+```
 
-## Running unit tests
+## ⚙️ Instalación
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clona el repositorio:
 
-## Running end-to-end tests
+```bash
+git clone https://github.com/jhualc/bankapp-frontend.git
+cd bankapp-frontend
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Instala las dependencias del proyecto:
 
-## Further help
+```bash
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+3. Levanta el servidor de desarrollo:
+
+```bash
+ng serve
+```
+
+4. Accede a la aplicación en tu navegador:
+
+```
+http://localhost:4200/
+```
+
+## 📨 Contacto
+
+Proyecto desarrollado por **Julian Jaimes**.  
+Para contacto o sugerencias, puedes escribir a: julian.jaimesr@gmail.com.
+
+---
+
